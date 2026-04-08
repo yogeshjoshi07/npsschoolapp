@@ -1,0 +1,980 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Cinzel:wght@600&family=Lato:wght@300;400;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#C9A227;--maroon:#8B1A1A;--deep:#1a1a2e;--cream:#FDF6E3;--bdr:#e5d8c0}
+body{font-family:'Lato',sans-serif;background:#f0ebe0;color:#1a1a2e}
+.wrap{max-width:430px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--bdr)}
+.tb{background:linear-gradient(135deg,#1a1a2e,#8B1A1A);padding:10px 13px;display:flex;align-items:center;justify-content:space-between}
+.tl{display:flex;align-items:center;gap:8px}
+.logo-img{width:40px;height:40px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;background:#000;flex-shrink:0}
+.sn{color:#fff;font-family:'Noto Sans Devanagari',sans-serif;font-size:9.5px;font-weight:600;line-height:1.4}
+.ss{color:var(--gold);font-size:8.5px;display:block}
+.ta{display:flex;gap:5px}
+.ib{background:rgba(255,255,255,0.18);border:none;border-radius:7px;width:31px;height:31px;cursor:pointer;font-size:14px;position:relative;display:flex;align-items:center;justify-content:center;color:#fff}
+.nd{position:absolute;top:4px;right:4px;width:6px;height:6px;background:#f44;border-radius:50%;border:1px solid #fff}
+.content-area{min-height:450px}
+.pg{display:none;padding-bottom:4px}
+.pg.on{display:block}
+.bn{display:flex;border-top:1px solid var(--bdr);background:#fff}
+.ni{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0 9px;cursor:pointer;font-size:8.5px;color:#aaa;border:none;background:none;font-family:'Lato',sans-serif}
+.ni.on{color:var(--maroon);font-weight:700}
+.ni .ic{font-size:17px}
+.hero{background:linear-gradient(135deg,#1a1a2e,#8B1A1A);padding:16px;color:#fff;display:flex;align-items:center;gap:14px}
+.hero-logo{width:60px;height:60px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;flex-shrink:0;background:#000}
+.hero-text{flex:1;text-align:center}
+.ht{font-family:'Cinzel',serif;font-size:14px;color:var(--gold)}
+.hs{font-family:'Noto Sans Devanagari',sans-serif;font-size:9.5px;opacity:.85;margin-top:2px}
+.hm{font-family:'Noto Sans Devanagari',sans-serif;font-size:10.5px;color:var(--gold);margin-top:5px}
+.stit{font-size:11px;font-weight:700;padding:11px 13px 5px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--gold);margin:0 13px;color:var(--deep)}
+.qg{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;padding:11px 13px}
+.qc{display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--cream);border:1px solid var(--bdr);border-radius:9px;padding:9px 3px;cursor:pointer}
+.qc:hover{background:var(--maroon)}.qc:hover .ql{color:#fff}
+.qi{font-size:20px}.ql{font-size:8.5px;font-weight:700;text-align:center;color:var(--deep)}
+.ns{display:flex;gap:9px;padding:9px 13px;overflow-x:auto;scrollbar-width:none}
+.nc{min-width:170px;background:#fff;border:1px solid var(--bdr);border-radius:9px;padding:9px;border-left:3px solid var(--maroon)}
+.ntg{font-size:7.5px;background:var(--maroon);color:#fff;padding:2px 6px;border-radius:20px;display:inline-block;margin-bottom:4px;font-weight:700;text-transform:uppercase}
+.ntx{font-size:10.5px;line-height:1.5;font-weight:500}.ndt{font-size:9px;color:#999;margin-top:2px}
+.sr{display:flex;gap:7px;padding:9px 13px;overflow-x:auto;scrollbar-width:none}
+.sb2{display:flex;align-items:center;gap:4px;padding:6px 10px;border-radius:20px;border:1.5px solid var(--bdr);font-size:10px;font-weight:700;cursor:pointer;text-decoration:none;color:#333;background:#fff;white-space:nowrap}
+.sb2.fb{border-color:#1877F2;color:#1877F2}.sb2.yt{border-color:#f00;color:#f00}.sb2.wa{border-color:#25D366;color:#25D366}.sb2.ig{border-color:#E1306C;color:#E1306C}
+.contact-box{margin:11px 13px;background:var(--cream);border:1px solid var(--bdr);border-radius:12px;padding:13px}
+.contact-title{font-size:11px;font-weight:700;color:var(--deep);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.contact-row{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--bdr)}
+.contact-row:last-child{border:none;padding-bottom:0}
+.contact-icon{font-size:18px;flex-shrink:0}
+.contact-info{flex:1}
+.contact-label{font-size:9.5px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.contact-val{font-size:11.5px;font-weight:700;color:var(--deep);margin-top:1px}
+.contact-link{font-size:11px;color:var(--maroon);font-weight:600;text-decoration:none;display:block;margin-top:1px}
+.ph{background:linear-gradient(135deg,#1a1a2e,#8B1A1A);padding:13px;color:#fff;display:flex;align-items:center;gap:9px}
+.pht{font-family:'Cinzel',serif;font-size:13px;color:var(--gold)}.phs{font-size:9px;opacity:.7;margin-top:1px;font-family:'Noto Sans Devanagari',sans-serif}
+.rf{padding:11px 13px;display:flex;flex-direction:column;gap:9px}
+.fl{font-size:10.5px;font-weight:700;margin-bottom:3px;display:block;color:var(--deep)}
+.fs,.fi{width:100%;padding:8px 11px;border:1.5px solid var(--bdr);border-radius:8px;font-size:12px;background:#fff;color:var(--deep);outline:none;font-family:'Lato',sans-serif}
+.fs:focus,.fi:focus{border-color:var(--maroon)}
+.gb2{background:linear-gradient(135deg,var(--maroon),#C0392B);color:#fff;border:none;border-radius:8px;padding:10px;font-size:12px;font-weight:700;cursor:pointer;width:100%;font-family:'Lato',sans-serif}
+.rc{margin:0 13px 13px;background:#fff;border:1px solid var(--bdr);border-radius:13px;overflow:hidden;display:none}
+.rc.show{display:block}
+.rh{background:linear-gradient(135deg,#1a1a2e,#8B1A1A);padding:13px;color:#fff;text-align:center}
+.rsn{font-size:14px;font-weight:700}.rsm{font-size:10px;opacity:.8;margin-top:2px}
+.rt{width:100%;border-collapse:collapse;table-layout:fixed}
+.rt th{background:var(--cream);padding:7px 9px;font-size:10px;font-weight:700;text-align:left;color:var(--maroon);text-transform:uppercase}
+.rt td{padding:7px 9px;font-size:11.5px;border-bottom:1px solid var(--bdr)}
+.gr{font-weight:700;padding:2px 7px;border-radius:20px;font-size:9.5px}
+.ga{background:#e8f5e9;color:#2e7d32}.gb3{background:#e3f2fd;color:#1565c0}.gc{background:#fff3e0;color:#e65100}.gf{background:#ffebee;color:#c62828}
+.rft{background:var(--cream);padding:11px;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center}
+.rto{font-size:17px;font-weight:700;color:var(--maroon)}.rpc{font-size:10px;color:#777}
+.rst{font-size:10px;font-weight:700;padding:5px 13px;border-radius:20px}
+.fr{display:flex;gap:7px;padding:9px 13px;overflow-x:auto;scrollbar-width:none}
+.fc{padding:5px 11px;border-radius:20px;border:1.5px solid var(--bdr);background:#fff;font-size:10.5px;cursor:pointer;white-space:nowrap;font-weight:500}
+.fc.on{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.pl{padding:9px 13px;display:flex;flex-direction:column;gap:7px}
+.pi2{background:#fff;border:1px solid var(--bdr);border-radius:9px;padding:11px;display:flex;align-items:center;gap:9px}
+.pico{width:36px;height:36px;background:var(--cream);border:1.5px solid var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.pif{flex:1;min-width:0}.pit{font-size:11.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pim{font-size:9.5px;color:#888;margin-top:2px}
+.pbg{font-size:8.5px;background:var(--cream);border:1px solid var(--gold);color:#856404;padding:2px 6px;border-radius:20px;font-weight:600;flex-shrink:0}
+.dl-btn{background:#e3f2fd;border:none;color:#1565c0;border-radius:6px;padding:5px 9px;font-size:9.5px;font-weight:700;cursor:pointer;flex-shrink:0;display:flex;align-items:center;gap:3px}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:13px}
+.sc{background:#fff;border:1px solid var(--bdr);border-radius:11px;padding:12px;text-align:center}
+.staff-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;margin:0 auto 6px;display:block;border:2px solid var(--gold)}
+.staff-initials{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;margin:0 auto 6px;border:2px solid var(--gold)}
+.snm{font-size:11.5px;font-weight:700}.srl{font-size:9.5px;color:#888}.ssj{font-size:9.5px;color:var(--maroon);font-weight:600;margin-top:2px}
+.adm-hdr2{background:linear-gradient(135deg,#1a1a2e,#8B1A1A);padding:13px;color:#fff;display:flex;align-items:center;justify-content:space-between}
+.adm-logo-row{display:flex;align-items:center;gap:9px}
+.adm-logo-img{width:34px;height:34px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;background:#000}
+.adm-tabs{display:flex;border-bottom:2px solid var(--bdr);margin:0 13px;overflow-x:auto;scrollbar-width:none}
+.adm-tab{flex-shrink:0;padding:8px 9px;font-size:9.5px;font-weight:700;cursor:pointer;border:none;background:none;color:#aaa;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:'Lato',sans-serif;white-space:nowrap}
+.adm-tab.on{color:var(--maroon);border-bottom-color:var(--maroon)}
+.adm-section{display:none;padding:11px 13px;flex-direction:column;gap:9px}
+.adm-section.on{display:flex}
+.upload-box{border:2px dashed var(--bdr);border-radius:10px;padding:14px;text-align:center;cursor:pointer;background:var(--cream)}
+.upload-box:hover{border-color:var(--maroon)}
+.xl-preview{background:#fff;border:1px solid var(--bdr);border-radius:9px;overflow:hidden;display:none}
+.xl-preview.show{display:block}
+.xl-hdr{background:#217346;color:#fff;padding:7px 10px;font-size:10.5px;font-weight:700}
+.xl-tbl{width:100%;border-collapse:collapse;font-size:10px;table-layout:fixed}
+.xl-tbl th{background:#e8f5e9;padding:5px 7px;text-align:left;color:#2e7d32;font-size:9px;font-weight:700;border-bottom:1px solid #c8e6c9}
+.xl-tbl td{padding:5px 7px;border-bottom:1px solid #f5f5f5}
+.info-box{background:#e3f2fd;border:1px solid #90caf9;border-radius:8px;padding:9px;font-size:10.5px;color:#0d47a1;line-height:1.5}
+.success-box{background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:9px;font-size:10.5px;color:#2e7d32}
+.warn-box{background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:9px;font-size:10.5px;color:#856404}
+.pta{width:100%;padding:8px;border:1.5px solid var(--bdr);border-radius:7px;font-size:11.5px;height:70px;resize:none;font-family:'Lato',sans-serif;outline:none}
+.pta:focus{border-color:var(--maroon)}
+.post-btn{background:var(--maroon);color:#fff;border:none;border-radius:7px;padding:9px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Lato',sans-serif;width:100%}
+.save-pub-btn{background:linear-gradient(135deg,#2d7d32,#1b5e20);color:#fff;border:none;border-radius:9px;padding:11px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Lato',sans-serif;width:100%;margin-top:4px;letter-spacing:.3px}
+.posted-item{background:var(--cream);border:1px solid var(--bdr);border-radius:7px;padding:9px;display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.pi-info{font-size:10.5px;font-weight:600}.pi-meta{font-size:9.5px;color:#888;margin-top:2px}
+.del-btn{background:#ffebee;border:none;color:#c62828;border-radius:5px;padding:4px 8px;font-size:9.5px;cursor:pointer;font-weight:700;flex-shrink:0}
+.edit-btn{background:#e3f2fd;border:none;color:#1565c0;border-radius:5px;padding:4px 8px;font-size:9.5px;cursor:pointer;font-weight:700;flex-shrink:0;margin-right:4px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:11px 13px}
+.stat-card{background:var(--cream);border-radius:8px;padding:10px;text-align:center}
+.stat-num{font-size:22px;font-weight:700;color:var(--maroon)}.stat-lbl{font-size:9.5px;color:#888;margin-top:2px}
+.staff-adm-card{background:#fff;border:1px solid var(--bdr);border-radius:10px;padding:10px;display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.staff-adm-photo{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex-shrink:0}
+.staff-adm-initials{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0;border:2px solid var(--gold)}
+.staff-adm-info{flex:1;min-width:0}
+.staff-adm-name{font-size:12px;font-weight:700}.staff-adm-role{font-size:10px;color:#888}.staff-adm-subj{font-size:10px;color:var(--maroon);font-weight:600}
+.staff-adm-actions{display:flex;gap:4px;flex-shrink:0}
+.photo-upload-area{width:80px;height:80px;border-radius:50%;border:2px dashed var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background:var(--cream);margin:0 auto;overflow:hidden;flex-shrink:0}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.52);z-index:200;display:none;align-items:flex-end;justify-content:center}
+.ov.show{display:flex}
+.md{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:430px;padding:16px;max-height:80vh;overflow-y:auto}
+.mtit{font-size:14px;font-weight:700;margin-bottom:11px;display:flex;justify-content:space-between;align-items:center}
+.mcls{background:none;border:none;font-size:17px;cursor:pointer;color:#aaa}
+.nit{background:#fff;border:1px solid var(--bdr);border-radius:9px;padding:11px;display:flex;gap:9px;margin-bottom:7px}
+.nd2{width:8px;height:8px;border-radius:50%;margin-top:3px;flex-shrink:0}
+.nd2.u{background:var(--maroon)}.nd2.r{background:#ccc}
+.ntit2{font-size:11.5px;font-weight:700}.nbdy{font-size:10.5px;color:#888;margin-top:2px;line-height:1.5}.ntm{font-size:9.5px;color:#bbb;margin-top:2px}
+.login-wrap{padding:20px 13px;display:flex;flex-direction:column;gap:11px}
+input[type=file]{display:none}
+.paper-item-pub{background:#fff;border:1px solid var(--bdr);border-radius:9px;padding:11px;display:flex;align-items:center;gap:9px}
+.unsaved-badge{background:#fff3cd;color:#856404;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;border:1px solid #ffe082;margin-left:6px}
+.published-badge{background:#e8f5e9;color:#2e7d32;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;border:1px solid #a5d6a7;margin-left:6px}
+</style>
+
+<div class="wrap">
+<div class="tb">
+  <div class="tl">
+    <img class="logo-img" src="/mnt/user-data/uploads/NPS_SCHOOL_LOGO_NO_BG.png" alt="NPS" onerror="this.style.background='linear-gradient(135deg,#8B1A1A,#C9A227)';this.style.display='flex';this.textContent='N'"/>
+    <div>
+      <div class="sn">श्री नागाणाराय पब्लिक माध्यमिक स्कूल</div>
+      <span class="ss">रिडमलसर — तमसो माँ ज्योतिर्गमय</span>
+    </div>
+  </div>
+  <div class="ta">
+    <button class="ib" onclick="showM('nm')">🔔<span class="nd"></span></button>
+    <button class="ib" onclick="showM('snm')">📢</button>
+    <button class="ib" id="lockbtn" onclick="openAdmin()">🔐</button>
+  </div>
+</div>
+
+<div class="content-area">
+
+<!-- HOME -->
+<div class="pg on" id="pg-home">
+  <div class="hero">
+    <img class="hero-logo" src="/mnt/user-data/uploads/NPS_SCHOOL_LOGO_NO_BG.png" alt="NPS Logo" onerror="this.style.display='none'"/>
+    <div class="hero-text">
+      <div class="ht">NPS Ridmalsar</div>
+      <div class="hs">श्री नागाणाराय पब्लिक माध्यमिक स्कूल रिडमलसर</div>
+      <div class="hm">✦ तमसो माँ ज्योतिर्गमय ✦</div>
+    </div>
+  </div>
+  <div class="stit">Quick Access</div>
+  <div class="qg">
+    <div class="qc" onclick="go(null,'results')"><span class="qi">📋</span><span class="ql">Results</span></div>
+    <div class="qc" onclick="go(null,'papers')"><span class="qi">📄</span><span class="ql">Papers</span></div>
+    <div class="qc" onclick="go(null,'notes')"><span class="qi">📚</span><span class="ql">Notes</span></div>
+    <div class="qc" onclick="go(null,'staff')"><span class="qi">👩‍🏫</span><span class="ql">Staff</span></div>
+  </div>
+  <div class="stit">📌 Notice Board</div>
+  <div class="ns">
+    <div class="nc"><span class="ntg">Important</span><div class="ntx">Annual exams Class 6th &amp; 7th from 15 April 2026</div><div class="ndt">📅 04 Apr 2026</div></div>
+    <div class="nc" style="border-left-color:var(--gold)"><span class="ntg" style="background:var(--gold)">Holiday</span><div class="ntx">School closed 14 April — Ambedkar Jayanti</div><div class="ndt">📅 03 Apr 2026</div></div>
+    <div class="nc" style="border-left-color:#2d7d32"><span class="ntg" style="background:#2d7d32">Event</span><div class="ntx">Sports Day 20 April — सभी students participate करें</div><div class="ndt">📅 01 Apr 2026</div></div>
+  </div>
+  <div class="stit">🌐 Follow Us</div>
+  <div class="sr">
+    <a class="sb2 fb" href="https://www.facebook.com/search/top?q=nps+school+ridmalsar" target="_blank">f Facebook</a>
+    <a class="sb2 yt" href="https://www.youtube.com/results?search_query=nps+school+ridmalsar" target="_blank">▶ YouTube</a>
+    <a class="sb2 wa" href="https://whatsapp.com/channel/0029Vb7JXHgEquiQB2xEoq0b" target="_blank">💬 WhatsApp</a>
+    <a class="sb2 ig" href="https://www.instagram.com/n_p_s_ridmalsar" target="_blank">📷 Instagram</a>
+  </div>
+
+  <!-- ABOUT / CONTACT -->
+  <div class="stit">📍 About Us</div>
+  <div style="margin:11px 13px 0;background:linear-gradient(135deg,#1a1a2e,#2d1b0e);border-radius:12px;padding:13px;color:#fff;text-align:center">
+    <div style="font-size:10px;color:var(--gold);font-family:'Noto Sans Devanagari',sans-serif;margin-bottom:5px">हमारे बारे में</div>
+    <div style="font-size:10.5px;opacity:.8;line-height:1.7;font-family:'Noto Sans Devanagari',sans-serif">गुणवत्तापूर्ण शिक्षा और उत्कृष्ट संस्कारों के साथ छात्रों को उज्जवल भविष्य की ओर ले जाने के लिए प्रतिबद्ध।</div>
+  </div>
+  <div class="contact-box">
+    <div class="contact-title">📞 Contact Details</div>
+    <div class="contact-row">
+      <span class="contact-icon">📞</span>
+      <div class="contact-info">
+        <div class="contact-label">Call Us</div>
+        <a class="contact-link" href="tel:+916350475780">+91 63504 75780</a>
+        <a class="contact-link" href="tel:+919784976395">+91 97849 76395</a>
+      </div>
+    </div>
+    <div class="contact-row">
+      <span class="contact-icon">📷</span>
+      <div class="contact-info">
+        <div class="contact-label">Instagram</div>
+        <a class="contact-link" href="https://www.instagram.com/n_p_s_ridmalsar" target="_blank">@n_p_s_ridmalsar</a>
+      </div>
+    </div>
+    <div class="contact-row">
+      <span class="contact-icon">💬</span>
+      <div class="contact-info">
+        <div class="contact-label">WhatsApp Channel</div>
+        <a class="contact-link" href="https://whatsapp.com/channel/0029Vb7JXHgEquiQB2xEoq0b" target="_blank">Join Our Channel</a>
+      </div>
+    </div>
+    <div class="contact-row">
+      <span class="contact-icon">📍</span>
+      <div class="contact-info">
+        <div class="contact-label">Location</div>
+        <div class="contact-val" style="font-size:11px">रिडमलसर, राजस्थान</div>
+      </div>
+    </div>
+  </div>
+  <div style="height:10px"></div>
+</div>
+
+<!-- RESULTS -->
+<div class="pg" id="pg-results">
+  <div class="ph"><span style="font-size:21px">📋</span><div><div class="pht">Student Results</div><div class="phs">परिणाम देखें</div></div></div>
+  <div class="rf">
+    <div><label class="fl">Class चुनें</label>
+      <select class="fs" id="rc">
+        <option value="">-- Class Select करें --</option>
+        <option value="PP4+">PP4+</option><option value="Nursery">Nursery</option><option value="KG">KG</option>
+        <option value="Class 1st">Class 1st</option><option value="Class 2nd">Class 2nd</option>
+        <option value="Class 3rd">Class 3rd</option><option value="Class 4th">Class 4th</option>
+        <option value="Class 6th">Class 6th</option><option value="Class 7th">Class 7th</option>
+      </select>
+    </div>
+    <div><label class="fl">Roll Number</label><input class="fi" id="rn" type="number" placeholder="जैसे: 5"/></div>
+    <div><label class="fl">Exam चुनें</label>
+      <select class="fs" id="re">
+        <option value="Half Yearly 2025-26">Half Yearly 2025-26</option>
+        <option value="Annual Exam 2025-26">Annual Exam 2025-26</option>
+        <option value="Unit Test 1">Unit Test 1</option>
+        <option value="Unit Test 2">Unit Test 2</option>
+      </select>
+    </div>
+    <button class="gb2" onclick="showRes()">🔍 Result देखें</button>
+  </div>
+  <div class="rc" id="rdisplay">
+    <div class="rh"><div class="rsn" id="rname">-</div><div class="rsm" id="rmeta">-</div></div>
+    <div style="overflow-x:auto"><table class="rt"><thead><tr><th>Subject</th><th>Max</th><th>Obt.</th><th>Grade</th></tr></thead><tbody id="rtbody"></tbody></table></div>
+    <div class="rft"><div><div class="rto" id="rtotal">-</div><div class="rpc" id="rpct">-</div></div><div class="rst" id="rstatus">-</div></div>
+  </div>
+</div>
+
+<!-- PAPERS -->
+<div class="pg" id="pg-papers">
+  <div class="ph"><span style="font-size:21px">📄</span><div><div class="pht">Question Papers</div><div class="phs">Download करें</div></div></div>
+  <div class="fr" id="paper-filter-row">
+    <div class="fc on" data-filter="all">All</div>
+    <div class="fc" data-filter="PP-KG">PP-KG</div>
+    <div class="fc" data-filter="1st-4th">1st-4th</div>
+    <div class="fc" data-filter="6th">6th</div>
+    <div class="fc" data-filter="7th">7th</div>
+  </div>
+  <div class="pl" id="papers-public-list"></div>
+</div>
+
+<!-- NOTES -->
+<div class="pg" id="pg-notes">
+  <div class="ph"><span style="font-size:21px">📚</span><div><div class="pht">Notes &amp; Study Material</div><div class="phs">अध्ययन सामग्री</div></div></div>
+  <div class="fr"><div class="fc on">All</div><div class="fc">Maths</div><div class="fc">Science</div><div class="fc">Hindi</div><div class="fc">English</div><div class="fc">EVS</div></div>
+  <div class="pl">
+    <div class="pi2"><div class="pico">📖</div><div class="pif"><div class="pit">Algebra Chapter Notes</div><div class="pim">Class 7th | Mathematics | Ramji Sir</div></div><span class="pbg" style="background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7">New</span></div>
+    <div class="pi2"><div class="pico">📖</div><div class="pif"><div class="pit">Plants &amp; Animals — EVS Notes</div><div class="pim">Class 3rd &amp; 4th | EVS</div></div><span class="pbg">EVS</span></div>
+  </div>
+</div>
+
+<!-- STAFF -->
+<div class="pg" id="pg-staff">
+  <div class="ph"><span style="font-size:21px">👩‍🏫</span><div><div class="pht">Our Staff</div><div class="phs">हमारे शिक्षक</div></div></div>
+  <div class="sg" id="staff-display-grid"></div>
+</div>
+
+<!-- ADMIN -->
+<div class="pg" id="pg-admin">
+  <div id="adm-login-screen">
+    <div class="login-wrap">
+      <div style="background:linear-gradient(135deg,#1a1a2e,#2d1b0e);border-radius:10px;padding:14px;color:#fff;text-align:center">
+        <div style="display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:6px">
+          <img style="width:36px;height:36px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;background:#000" src="/mnt/user-data/uploads/NPS_SCHOOL_LOGO_NO_BG.png" alt="NPS" onerror="this.style.display='none'"/>
+          <div style="font-family:'Cinzel',serif;font-size:14px;color:var(--gold)">Admin Panel</div>
+        </div>
+        <div style="font-size:10px;opacity:.7">Staff Only — Authorized Access</div>
+      </div>
+      <div class="warn-box" style="text-align:center">⚠️ यह panel केवल school staff के लिए है।</div>
+      <div><label class="fl">Username</label><input class="fi" id="adm-user" placeholder="Username"/></div>
+      <div><label class="fl">Password</label><input class="fi" id="adm-pass" type="password" placeholder="Password"/></div>
+      <button class="gb2" onclick="doLogin()">🔓 Login करें</button>
+      <div id="login-err" style="display:none;background:#ffebee;border:1px solid #ffcdd2;border-radius:7px;padding:9px;font-size:11px;color:#c62828;text-align:center">❌ गलत username या password</div>
+    </div>
+  </div>
+
+  <div id="adm-dashboard" style="display:none">
+    <div class="adm-hdr2">
+      <div class="adm-logo-row">
+        <img class="adm-logo-img" src="/mnt/user-data/uploads/NPS_SCHOOL_LOGO_NO_BG.png" alt="NPS" onerror="this.style.display='none'"/>
+        <div><div style="font-family:'Cinzel',serif;font-size:12px;color:var(--gold)">Admin Panel</div><div style="font-size:9px;opacity:.7">Staff Control Center</div></div>
+      </div>
+      <button onclick="doLogout()" style="background:#c62828;border:none;color:#fff;border-radius:7px;padding:6px 12px;font-size:10.5px;cursor:pointer;font-weight:700;font-family:'Lato',sans-serif">🚪 Logout</button>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num" id="st-students">0</div><div class="stat-lbl">Results Saved</div></div>
+      <div class="stat-card"><div class="stat-num" id="st-papers-count">0</div><div class="stat-lbl">Papers Published</div></div>
+    </div>
+    <div class="adm-tabs">
+      <button class="adm-tab on" onclick="admTab('result')">📊 Result</button>
+      <button class="adm-tab" onclick="admTab('paper')">📄 Paper</button>
+      <button class="adm-tab" onclick="admTab('notes2')">📚 Notes</button>
+      <button class="adm-tab" onclick="admTab('staff2')">👩‍🏫 Staff</button>
+      <button class="adm-tab" onclick="admTab('notif2')">📢 Notif</button>
+    </div>
+
+    <!-- RESULT TAB -->
+    <div class="adm-section on" id="adm-result">
+      <div class="info-box">📊 Excel/CSV upload करें — Roll No, Name + subject marks columns रखें।</div>
+      <div><label class="fl">Class चुनें</label>
+        <select class="fs" id="adm-cls" onchange="updateAdmSubjects()">
+          <option value="">-- Class --</option>
+          <option value="PP4+">PP4+</option><option value="Nursery">Nursery</option><option value="KG">KG</option>
+          <option value="Class 1st">Class 1st</option><option value="Class 2nd">Class 2nd</option>
+          <option value="Class 3rd">Class 3rd</option><option value="Class 4th">Class 4th</option>
+          <option value="Class 6th">Class 6th</option><option value="Class 7th">Class 7th</option>
+        </select>
+      </div>
+      <div><label class="fl">Exam चुनें</label>
+        <select class="fs" id="adm-exam">
+          <option value="Half Yearly 2025-26">Half Yearly 2025-26</option>
+          <option value="Annual Exam 2025-26">Annual Exam 2025-26</option>
+          <option value="Unit Test 1">Unit Test 1</option>
+          <option value="Unit Test 2">Unit Test 2</option>
+        </select>
+      </div>
+      <div id="subject-hint" style="background:#fff3cd;border:1px solid #ffe082;border-radius:7px;padding:8px;font-size:10px;color:#5d4037;display:none"></div>
+      <input type="file" id="excel-file" accept=".xlsx,.xls,.csv" onchange="handleExcel(this)">
+      <div class="upload-box" onclick="document.getElementById('excel-file').click()">
+        <div style="font-size:24px;margin-bottom:4px">📊</div>
+        <div style="font-size:11px;font-weight:700;color:var(--deep)">Excel / CSV Upload करें</div>
+        <div style="font-size:9px;color:#888;margin-top:2px">Roll No, Name + subject marks</div>
+        <div style="margin-top:8px;background:var(--maroon);color:#fff;border-radius:7px;padding:5px 12px;display:inline-block;font-size:10.5px;font-weight:700">📂 File Choose करें</div>
+      </div>
+      <div class="xl-preview" id="xl-prev">
+        <div class="xl-hdr">📊 <span id="xl-filename">file</span></div>
+        <div style="overflow-x:auto"><table class="xl-tbl"><thead id="xl-head"></thead><tbody id="xl-body"></tbody></table></div>
+        <div style="padding:7px 10px;font-size:10px;color:#2e7d32;background:#f1f8e9">✅ <span id="xl-count">0</span> students loaded &amp; published</div>
+      </div>
+      <div style="text-align:center;font-size:10px;color:#888">— या manually add करें —</div>
+      <div><label class="fl">Roll No</label><input class="fi" id="mr-roll" type="number" placeholder="Roll Number"/></div>
+      <div><label class="fl">Student Name</label><input class="fi" id="mr-name" placeholder="पूरा नाम"/></div>
+      <div id="subject-inputs" style="display:grid;grid-template-columns:1fr 1fr;gap:7px"></div>
+      <button class="save-pub-btn" onclick="addManualResult()">💾 Save &amp; Publish Result</button>
+      <div class="success-box" id="result-saved" style="display:none"></div>
+    </div>
+
+    <!-- PAPER TAB -->
+    <div class="adm-section" id="adm-paper">
+      <div class="info-box">📄 PDF paper upload करें → Save &amp; Publish करें → Students download कर सकेंगे।</div>
+      <div><label class="fl">Class</label>
+        <select class="fs" id="pp-cls"><option value="">-- Class --</option><option>PP4+</option><option>Nursery</option><option>KG</option><option>Class 1st</option><option>Class 2nd</option><option>Class 3rd</option><option>Class 4th</option><option>Class 6th</option><option>Class 7th</option></select>
+      </div>
+      <div><label class="fl">Subject</label>
+        <select class="fs" id="pp-sub"><option value="">-- Subject --</option><option>Hindi</option><option>English</option><option>Mathematics</option><option>EVS</option><option>Science</option><option>Social Science</option><option>Sanskrit</option></select>
+      </div>
+      <div><label class="fl">Exam Name</label><input class="fi" id="pp-exam" placeholder="जैसे: Annual 2025-26"/></div>
+      <input type="file" id="pdf-file" accept=".pdf" onchange="previewPaper(this)">
+      <div class="upload-box" id="pdf-upload-box" onclick="document.getElementById('pdf-file').click()">
+        <div style="font-size:24px;margin-bottom:4px">📄</div>
+        <div style="font-size:11px;font-weight:700;color:var(--deep)">PDF Paper Upload करें</div>
+        <div style="font-size:9px;color:#888;margin-top:2px">Question paper PDF file</div>
+        <div style="margin-top:8px;background:var(--maroon);color:#fff;border-radius:7px;padding:5px 12px;display:inline-block;font-size:10.5px;font-weight:700">📂 PDF Choose करें</div>
+      </div>
+      <div id="pdf-preview-box" style="display:none;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:10px;font-size:11px;color:#2e7d32;display:none">
+        ✅ PDF ready: <span id="pdf-preview-name" style="font-weight:700"></span>
+      </div>
+      <button class="save-pub-btn" onclick="publishPaper()">💾 Save &amp; Publish Paper</button>
+      <div class="success-box" id="paper-saved" style="display:none">✅ Paper published! Students अब download कर सकते हैं।</div>
+      <div style="font-size:11px;font-weight:700;color:var(--deep);margin-top:4px">Published Papers <span id="pub-papers-badge" style="background:var(--maroon);color:#fff;border-radius:20px;padding:1px 8px;font-size:9.5px;margin-left:4px">0</span></div>
+      <div id="adm-papers-list"></div>
+    </div>
+
+    <!-- NOTES TAB -->
+    <div class="adm-section" id="adm-notes2">
+      <div class="info-box">📚 Study material post करें।</div>
+      <div><label class="fl">Class</label>
+        <select class="fs"><option>-- Class --</option><option>PP4+</option><option>Nursery</option><option>KG</option><option>Class 1st</option><option>Class 2nd</option><option>Class 3rd</option><option>Class 4th</option><option>Class 6th</option><option>Class 7th</option></select>
+      </div>
+      <div><label class="fl">Subject</label>
+        <select class="fs"><option>-- Subject --</option><option>Hindi</option><option>English</option><option>Mathematics</option><option>EVS</option><option>Science</option><option>Social Science</option><option>Sanskrit</option></select>
+      </div>
+      <div><label class="fl">Notes Title</label><input class="fi" id="nt-title" placeholder="Topic name"/></div>
+      <div><label class="fl">Teacher Name</label><input class="fi" id="nt-teacher" placeholder="आपका नाम"/></div>
+      <input type="file" id="note-file" accept=".pdf,.jpg,.png">
+      <div class="upload-box" onclick="document.getElementById('note-file').click()">
+        <div style="font-size:24px;margin-bottom:4px">📖</div>
+        <div style="font-size:11px;font-weight:700;color:var(--deep)">PDF / Image Upload करें</div>
+        <div style="margin-top:8px;background:var(--maroon);color:#fff;border-radius:7px;padding:5px 12px;display:inline-block;font-size:10.5px;font-weight:700">📂 File Choose करें</div>
+      </div>
+      <button class="save-pub-btn" onclick="addNote()">💾 Save &amp; Publish Notes</button>
+      <div class="success-box" id="note-saved" style="display:none">✅ Notes published!</div>
+    </div>
+
+    <!-- STAFF TAB -->
+    <div class="adm-section" id="adm-staff2">
+      <div class="info-box">👩‍🏫 Staff add/edit/delete करें → <b>Save &amp; Publish</b> दबाएँ → Staff page तुरंत update होगा।</div>
+      <div style="background:var(--cream);border:1px solid var(--bdr);border-radius:10px;padding:13px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:11px;font-weight:700;color:var(--deep)" id="staff-form-title">➕ New Staff Add करें</div>
+        <input type="file" id="staff-photo-input" accept="image/*" onchange="previewStaffPhoto(this)">
+        <div class="photo-upload-area" id="staff-photo-area" onclick="document.getElementById('staff-photo-input').click()">
+          <div style="font-size:24px">📷</div>
+          <div style="font-size:8px;color:#888;margin-top:2px">Photo Upload</div>
+        </div>
+        <div><label class="fl">Name</label><input class="fi" id="sf-name" placeholder="Teacher का नाम"/></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px">
+          <div><label class="fl">Role / Designation</label><input class="fi" id="sf-role" placeholder="जैसे: Principal"/></div>
+          <div><label class="fl">Subject</label><input class="fi" id="sf-subj" placeholder="जैसे: Maths"/></div>
+        </div>
+        <div><label class="fl">Avatar Color (if no photo)</label>
+          <select class="fs" id="sf-color">
+            <option value="linear-gradient(135deg,#8B1A1A,#C9A227)">Maroon-Gold</option>
+            <option value="linear-gradient(135deg,#7a3a00,#e65100)">Orange</option>
+            <option value="linear-gradient(135deg,#1a6b3c,#2e8b57)">Green</option>
+            <option value="linear-gradient(135deg,#0a4d7a,#1565c0)">Blue</option>
+            <option value="linear-gradient(135deg,#5a1a6b,#8e24aa)">Purple</option>
+            <option value="linear-gradient(135deg,#1a3a6b,#283593)">Navy</option>
+            <option value="linear-gradient(135deg,#1a1a2e,#8B1A1A)">Deep Maroon</option>
+          </select>
+        </div>
+        <input type="hidden" id="edit-staff-id" value="">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px">
+          <button class="post-btn" onclick="stageStaff()" id="stage-staff-btn">➕ Add to List</button>
+          <button onclick="cancelEdit()" style="background:#f5f5f5;border:1px solid var(--bdr);border-radius:7px;padding:9px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Lato',sans-serif;color:#666">✕ Cancel</button>
+        </div>
+      </div>
+      <div style="font-size:11px;font-weight:700;color:var(--deep);margin-top:2px">Draft Staff List <span id="draft-badge" class="unsaved-badge">Unsaved</span></div>
+      <div id="staff-adm-list"></div>
+      <button class="save-pub-btn" onclick="publishStaff()">🚀 Save &amp; Publish Staff Changes</button>
+      <div class="success-box" id="staff-saved" style="display:none">✅ Staff list published! Staff page update हो गया।</div>
+    </div>
+
+    <!-- NOTIF TAB -->
+    <div class="adm-section" id="adm-notif2">
+      <div><label class="fl">Title</label><input class="fi" id="adm-ntit" placeholder="Notification title..."/></div>
+      <div><label class="fl">Message</label><textarea class="pta" id="adm-nmsg" placeholder="पूरा message..."></textarea></div>
+      <div><label class="fl">Send To</label>
+        <select class="fs"><option>All Parents &amp; Students</option><option>Class 1st-4th</option><option>Class 6th Only</option><option>Class 7th Only</option><option>All Classes</option><option>Staff Only</option></select>
+      </div>
+      <button class="save-pub-btn" onclick="sendAdminNotif()">📢 Send Notification</button>
+      <div class="success-box" id="notif-sent" style="display:none">✅ Notification भेज दी!</div>
+      <div id="notif-posted-list"></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="bn">
+  <button class="ni on" id="ni-home" onclick="go(null,'home')"><span class="ic">🏠</span><span>Home</span></button>
+  <button class="ni" id="ni-results" onclick="go(null,'results')"><span class="ic">📋</span><span>Results</span></button>
+  <button class="ni" id="ni-papers" onclick="go(null,'papers')"><span class="ic">📄</span><span>Papers</span></button>
+  <button class="ni" id="ni-notes" onclick="go(null,'notes')"><span class="ic">📚</span><span>Notes</span></button>
+  <button class="ni" id="ni-staff" onclick="go(null,'staff')"><span class="ic">👩‍🏫</span><span>Staff</span></button>
+</div>
+</div>
+
+<!-- MODALS -->
+<div class="ov" id="nm" onclick="closeM('nm')">
+<div class="md" onclick="event.stopPropagation()">
+  <div class="mtit">🔔 Notifications <button class="mcls" onclick="closeM('nm')">✕</button></div>
+  <div id="notif-display">
+    <div class="nit"><div class="nd2 u"></div><div><div class="ntit2">Annual Exam Schedule</div><div class="nbdy">Class 6th &amp; 7th exams from 15 April 2026.</div><div class="ntm">2 hours ago</div></div></div>
+    <div class="nit"><div class="nd2 r"></div><div><div class="ntit2">Fee Reminder</div><div class="nbdy">Last date for Q1 fee: 10 April 2026.</div><div class="ntm">2 days ago</div></div></div>
+  </div>
+</div>
+</div>
+
+<div class="ov" id="snm" onclick="closeM('snm')">
+<div class="md" onclick="event.stopPropagation()">
+  <div class="mtit">📢 Quick Notification <button class="mcls" onclick="closeM('snm')">✕</button></div>
+  <div style="display:flex;flex-direction:column;gap:9px">
+    <div><label class="fl">Title</label><input class="fi" id="qsti" placeholder="Title..."/></div>
+    <div><label class="fl">Message</label><textarea class="pta" id="qsbi" style="height:75px" placeholder="Message..."></textarea></div>
+    <div><label class="fl">Send To</label><select class="fs"><option>All Parents &amp; Students</option><option>Class 6th</option><option>Class 7th</option><option>All Classes</option></select></div>
+    <button class="gb2" onclick="quickSend()" style="background:linear-gradient(135deg,#1a1a2e,#8B1A1A)">📢 भेजें</button>
+  </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+const CREDS={user:'admin',pass:'nps2026'};
+let loggedIn=false;
+let resultDB={};
+let pendingPhotoData=null;
+let pendingPaperData=null;
+
+const CLASS_SUBJECTS={
+  'PP4+':[{sub:'Hindi',max:50},{sub:'English',max:50},{sub:'Mathematics',max:50}],
+  'Nursery':[{sub:'Hindi',max:50},{sub:'English',max:50},{sub:'Mathematics',max:50}],
+  'KG':[{sub:'Hindi',max:50},{sub:'English',max:50},{sub:'Mathematics',max:50}],
+  'Class 1st':[{sub:'Hindi',max:100},{sub:'English',max:100},{sub:'Mathematics',max:100}],
+  'Class 2nd':[{sub:'Hindi',max:100},{sub:'English',max:100},{sub:'Mathematics',max:100}],
+  'Class 3rd':[{sub:'Hindi',max:100},{sub:'English',max:100},{sub:'Mathematics',max:100},{sub:'EVS',max:100}],
+  'Class 4th':[{sub:'Hindi',max:100},{sub:'English',max:100},{sub:'Mathematics',max:100},{sub:'EVS',max:100}],
+  'Class 6th':[{sub:'Hindi',max:100},{sub:'English',max:100},{sub:'Mathematics',max:100},{sub:'Science',max:100},{sub:'Social Science',max:100},{sub:'Sanskrit',max:100}],
+  'Class 7th':[{sub:'Hindi',max:100},{sub:'English',max:100},{sub:'Mathematics',max:100},{sub:'Science',max:100},{sub:'Social Science',max:100},{sub:'Sanskrit',max:100}]
+};
+
+let draftStaff=[
+  {id:1,name:'Mohan Kumawat',role:'Principal',subject:'Administration',color:'linear-gradient(135deg,#1a1a2e,#8B1A1A)',photo:null},
+  {id:2,name:'Ramji Kumar',role:'Sr. Teacher',subject:'Mathematics',color:'linear-gradient(135deg,#7a3a00,#e65100)',photo:null},
+  {id:3,name:'Seema Mathur',role:'Teacher',subject:'Science / EVS',color:'linear-gradient(135deg,#1a6b3c,#2e8b57)',photo:null},
+  {id:4,name:'Preeti Mehta',role:'Teacher',subject:'English',color:'linear-gradient(135deg,#0a4d7a,#1565c0)',photo:null},
+  {id:5,name:'Kavita Devi',role:'Teacher',subject:'Hindi & Sanskrit',color:'linear-gradient(135deg,#5a1a6b,#8e24aa)',photo:null},
+  {id:6,name:'Suresh Sharma',role:'Teacher',subject:'Social Science',color:'linear-gradient(135deg,#1a3a6b,#283593)',photo:null}
+];
+let publishedStaff=JSON.parse(JSON.stringify(draftStaff));
+let nextStaffId=7;
+
+let publishedPapers=[];
+let nextPaperId=1;
+
+const ALL_PAGES=['home','results','papers','notes','staff','admin'];
+
+function go(from,to){
+  ALL_PAGES.forEach(p=>{
+    document.getElementById('pg-'+p).classList.remove('on');
+    const n=document.getElementById('ni-'+p);
+    if(n) n.classList.remove('on');
+  });
+  document.getElementById('pg-'+to).classList.add('on');
+  const ni=document.getElementById('ni-'+to);
+  if(ni) ni.classList.add('on');
+  if(to==='staff') renderStaffPublic();
+  if(to==='papers') renderPapersPublic();
+}
+
+function openAdmin(){
+  go(null,'admin');
+  if(!loggedIn){
+    document.getElementById('adm-login-screen').style.display='block';
+    document.getElementById('adm-dashboard').style.display='none';
+  } else {
+    document.getElementById('adm-login-screen').style.display='none';
+    document.getElementById('adm-dashboard').style.display='block';
+  }
+}
+
+function doLogin(){
+  const u=document.getElementById('adm-user').value.trim();
+  const p=document.getElementById('adm-pass').value.trim();
+  if(u===CREDS.user&&p===CREDS.pass){
+    loggedIn=true;
+    document.getElementById('adm-login-screen').style.display='none';
+    document.getElementById('adm-dashboard').style.display='block';
+    document.getElementById('lockbtn').textContent='🔓';
+    document.getElementById('login-err').style.display='none';
+    renderStaffAdmin();
+    renderAdmPapers();
+  } else {
+    document.getElementById('login-err').style.display='block';
+  }
+}
+
+function doLogout(){
+  loggedIn=false;
+  document.getElementById('lockbtn').textContent='🔐';
+  document.getElementById('adm-user').value='';
+  document.getElementById('adm-pass').value='';
+  document.getElementById('adm-login-screen').style.display='block';
+  document.getElementById('adm-dashboard').style.display='none';
+  go(null,'home');
+}
+
+function admTab(t){
+  document.querySelectorAll('.adm-tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.adm-section').forEach(x=>x.classList.remove('on'));
+  const idx={result:0,paper:1,notes2:2,staff2:3,notif2:4};
+  document.querySelectorAll('.adm-tab')[idx[t]].classList.add('on');
+  document.getElementById('adm-'+t).classList.add('on');
+  if(t==='staff2') renderStaffAdmin();
+  if(t==='paper') renderAdmPapers();
+}
+
+function getInitials(name){return name.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();}
+
+function makeAvatar(s,size,cls){
+  if(s.photo) return `<img class="${cls}" src="${s.photo}" style="width:${size}px;height:${size}px" alt="${s.name}"/>`;
+  return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${s.color};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:${Math.round(size*0.3)}px;border:2px solid var(--gold);flex-shrink:0">${getInitials(s.name)}</div>`;
+}
+
+function renderStaffPublic(){
+  const grid=document.getElementById('staff-display-grid');
+  if(!grid) return;
+  grid.innerHTML=publishedStaff.map(s=>`
+    <div class="sc">
+      ${makeAvatar(s,56,'staff-photo')}
+      <div class="snm">${s.name}</div>
+      <div class="srl">${s.role}</div>
+      <div class="ssj">${s.subject}</div>
+    </div>`).join('');
+}
+
+function renderStaffAdmin(){
+  const list=document.getElementById('staff-adm-list');
+  if(!list) return;
+  list.innerHTML=draftStaff.map(s=>`
+    <div class="staff-adm-card">
+      ${makeAvatar(s,44,'staff-adm-photo')}
+      <div class="staff-adm-info">
+        <div class="staff-adm-name">${s.name}</div>
+        <div class="staff-adm-role">${s.role}</div>
+        <div class="staff-adm-subj">${s.subject}</div>
+      </div>
+      <div class="staff-adm-actions">
+        <button class="edit-btn" onclick="editStaff(${s.id})">✏️</button>
+        <button class="del-btn" onclick="deleteStaff(${s.id})">🗑</button>
+      </div>
+    </div>`).join('');
+}
+
+function previewStaffPhoto(input){
+  const file=input.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=function(e){
+    pendingPhotoData=e.target.result;
+    document.getElementById('staff-photo-area').innerHTML=`<img src="${pendingPhotoData}" style="width:80px;height:80px;object-fit:cover;border-radius:50%"/>`;
+  };
+  reader.readAsDataURL(file);
+}
+
+function stageStaff(){
+  const name=document.getElementById('sf-name').value.trim();
+  const role=document.getElementById('sf-role').value.trim();
+  const subj=document.getElementById('sf-subj').value.trim();
+  const color=document.getElementById('sf-color').value;
+  const editId=document.getElementById('edit-staff-id').value;
+  if(!name||!role||!subj){alert('Name, Role aur Subject zaroori hai');return;}
+  if(editId){
+    const idx=draftStaff.findIndex(s=>s.id===parseInt(editId));
+    if(idx>=0){
+      draftStaff[idx]={...draftStaff[idx],name,role,subject:subj,color};
+      if(pendingPhotoData!==undefined) draftStaff[idx].photo=pendingPhotoData;
+    }
+  } else {
+    draftStaff.push({id:nextStaffId++,name,role,subject:subj,color,photo:pendingPhotoData||null});
+  }
+  cancelEdit();
+  renderStaffAdmin();
+  document.getElementById('draft-badge').className='unsaved-badge';
+  document.getElementById('draft-badge').textContent='Unsaved Changes';
+}
+
+function cancelEdit(){
+  document.getElementById('sf-name').value='';
+  document.getElementById('sf-role').value='';
+  document.getElementById('sf-subj').value='';
+  document.getElementById('edit-staff-id').value='';
+  document.getElementById('stage-staff-btn').textContent='➕ Add to List';
+  document.getElementById('staff-form-title').textContent='➕ New Staff Add करें';
+  pendingPhotoData=null;
+  document.getElementById('staff-photo-area').innerHTML='<div style="font-size:24px">📷</div><div style="font-size:8px;color:#888;margin-top:2px">Photo Upload</div>';
+  document.getElementById('staff-photo-input').value='';
+}
+
+function editStaff(id){
+  const s=draftStaff.find(x=>x.id===id); if(!s) return;
+  document.getElementById('sf-name').value=s.name;
+  document.getElementById('sf-role').value=s.role;
+  document.getElementById('sf-subj').value=s.subject;
+  document.getElementById('sf-color').value=s.color;
+  document.getElementById('edit-staff-id').value=id;
+  document.getElementById('stage-staff-btn').textContent='💾 Update';
+  document.getElementById('staff-form-title').textContent='✏️ Staff Edit करें';
+  pendingPhotoData=s.photo||null;
+  const area=document.getElementById('staff-photo-area');
+  area.innerHTML=s.photo?`<img src="${s.photo}" style="width:80px;height:80px;object-fit:cover;border-radius:50%"/>`:'<div style="font-size:24px">📷</div><div style="font-size:8px;color:#888;margin-top:2px">Photo Upload</div>';
+  document.getElementById('adm-staff2').scrollTop=0;
+}
+
+function deleteStaff(id){
+  if(!confirm('Delete karein?')) return;
+  draftStaff=draftStaff.filter(s=>s.id!==id);
+  renderStaffAdmin();
+  document.getElementById('draft-badge').className='unsaved-badge';
+  document.getElementById('draft-badge').textContent='Unsaved Changes';
+}
+
+function publishStaff(){
+  publishedStaff=JSON.parse(JSON.stringify(draftStaff));
+  renderStaffPublic();
+  const ss=document.getElementById('staff-saved');
+  ss.style.display='block';
+  ss.textContent='✅ Staff list published! Staff page update हो गया। ('+publishedStaff.length+' members)';
+  document.getElementById('draft-badge').className='published-badge';
+  document.getElementById('draft-badge').textContent='Published ✓';
+  setTimeout(()=>ss.style.display='none',4000);
+}
+
+function previewPaper(input){
+  const file=input.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=function(e){
+    pendingPaperData={name:file.name,data:e.target.result};
+    const pb=document.getElementById('pdf-preview-box');
+    pb.style.display='block';
+    document.getElementById('pdf-preview-name').textContent=file.name;
+  };
+  reader.readAsDataURL(file);
+}
+
+function publishPaper(){
+  const cls=document.getElementById('pp-cls').value;
+  const sub=document.getElementById('pp-sub').value;
+  const exam=document.getElementById('pp-exam').value.trim();
+  if(!cls||!sub||!exam){alert('Class, Subject aur Exam name fill karein');return;}
+  const paper={
+    id:nextPaperId++,
+    cls,sub,exam,
+    title:`${sub} — ${exam}`,
+    meta:`${cls} | ${exam}`,
+    filter:cls.includes('6th')?'6th':cls.includes('7th')?'7th':(cls==='PP4+'||cls==='Nursery'||cls==='KG')?'PP-KG':'1st-4th',
+    pdfData:pendingPaperData?pendingPaperData.data:null,
+    pdfName:pendingPaperData?pendingPaperData.name:null,
+    date:'Just now'
+  };
+  publishedPapers.unshift(paper);
+  pendingPaperData=null;
+  document.getElementById('pdf-preview-box').style.display='none';
+  document.getElementById('pdf-file').value='';
+  document.getElementById('pp-cls').value='';
+  document.getElementById('pp-sub').value='';
+  document.getElementById('pp-exam').value='';
+  document.getElementById('paper-saved').style.display='block';
+  setTimeout(()=>document.getElementById('paper-saved').style.display='none',3000);
+  renderAdmPapers();
+  renderPapersPublic();
+  document.getElementById('st-papers-count').textContent=publishedPapers.length;
+}
+
+function renderAdmPapers(){
+  const list=document.getElementById('adm-papers-list');
+  if(!list) return;
+  document.getElementById('pub-papers-badge').textContent=publishedPapers.length;
+  if(!publishedPapers.length){list.innerHTML='<div style="text-align:center;color:#aaa;font-size:11px;padding:14px">No papers published yet</div>';return;}
+  list.innerHTML=publishedPapers.map(p=>`
+    <div class="posted-item">
+      <div>
+        <div class="pi-info">${p.title}</div>
+        <div class="pi-meta">${p.cls} • ${p.date}</div>
+      </div>
+      <div style="display:flex;gap:5px">
+        ${p.pdfData?`<button class="edit-btn" onclick="downloadPaper(${p.id})">⬇️</button>`:''}
+        <button class="del-btn" onclick="deletePaper(${p.id})">🗑</button>
+      </div>
+    </div>`).join('');
+}
+
+function renderPapersPublic(filter='all'){
+  const list=document.getElementById('papers-public-list');
+  if(!list) return;
+  const filtered=filter==='all'?publishedPapers:publishedPapers.filter(p=>p.filter===filter);
+  if(!filtered.length){
+    list.innerHTML='<div style="text-align:center;color:#aaa;font-size:11px;padding:20px">No papers available yet</div>';
+    return;
+  }
+  list.innerHTML=filtered.map(p=>`
+    <div class="paper-item-pub">
+      <div class="pico">📝</div>
+      <div class="pif">
+        <div class="pit">${p.title}</div>
+        <div class="pim">${p.meta}</div>
+      </div>
+      ${p.pdfData
+        ?`<button class="dl-btn" onclick="downloadPaper(${p.id})">⬇️ Download</button>`
+        :`<span class="pbg">View</span>`
+      }
+    </div>`).join('');
+}
+
+function downloadPaper(id){
+  const p=publishedPapers.find(x=>x.id===id);
+  if(!p||!p.pdfData){alert('PDF available nahi hai');return;}
+  const a=document.createElement('a');
+  a.href=p.pdfData;
+  a.download=p.pdfName||`${p.title}.pdf`;
+  a.click();
+}
+
+function deletePaper(id){
+  if(!confirm('Paper delete karein?')) return;
+  publishedPapers=publishedPapers.filter(p=>p.id!==id);
+  renderAdmPapers();
+  renderPapersPublic();
+  document.getElementById('st-papers-count').textContent=publishedPapers.length;
+}
+
+function updateAdmSubjects(){
+  const cls=document.getElementById('adm-cls').value;
+  const subs=CLASS_SUBJECTS[cls]||[];
+  const hint=document.getElementById('subject-hint');
+  if(cls&&subs.length){
+    hint.style.display='block';
+    hint.textContent='📋 Subjects: '+subs.map(s=>s.sub+' ('+s.max+')').join(', ');
+  } else { hint.style.display='none'; }
+  document.getElementById('subject-inputs').innerHTML=subs.map(s=>
+    `<div><label class="fl">${s.sub} (max ${s.max})</label><input class="fi" id="mr-${s.sub.replace(/ /g,'_')}" type="number" placeholder="marks"/></div>`
+  ).join('');
+}
+
+function getGrade(m,max){
+  const p=m/max*100;
+  if(p>=80) return {g:'A+',c:'ga'};
+  if(p>=70) return {g:'A',c:'ga'};
+  if(p>=60) return {g:'B+',c:'gb3'};
+  if(p>=50) return {g:'B',c:'gb3'};
+  if(p>=33) return {g:'C',c:'gc'};
+  return {g:'F',c:'gf'};
+}
+
+function handleExcel(input){
+  const file=input.files[0]; if(!file) return;
+  const cls=document.getElementById('adm-cls').value;
+  const exam=document.getElementById('adm-exam').value;
+  if(!cls){alert('Pehle class choose karein');return;}
+  const subs=CLASS_SUBJECTS[cls]||[];
+  const reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      const wb=XLSX.read(new Uint8Array(e.target.result),{type:'array'});
+      const json=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{defval:''});
+      if(!json.length){alert('File empty hai');return;}
+      let count=0;
+      json.forEach(row=>{
+        const roll=String(row['Roll No']||row['Roll']||row['RollNo']||'').trim();
+        if(!roll) return;
+        resultDB[cls+'_'+roll]={name:String(row['Name']||row['Student Name']||'Student '+roll),class:cls,exam,roll,
+          subjects:subs.map(s=>({sub:s.sub,marks:parseInt(row[s.sub]||row[s.sub.toLowerCase()]||0),max:s.max}))};
+        count++;
+      });
+      const keys=Object.keys(json[0]).slice(0,5);
+      document.getElementById('xl-head').innerHTML='<tr>'+keys.map(k=>'<th>'+k+'</th>').join('')+'</tr>';
+      document.getElementById('xl-body').innerHTML=json.slice(0,4).map(r=>'<tr>'+keys.map(k=>'<td>'+(r[k]||'-')+'</td>').join('')+'</tr>').join('');
+      document.getElementById('xl-filename').textContent=file.name;
+      document.getElementById('xl-count').textContent=count;
+      document.getElementById('xl-prev').classList.add('show');
+      const rs=document.getElementById('result-saved');
+      rs.style.display='block';
+      rs.textContent='✅ '+count+' students ka result published! '+cls+' | '+exam;
+      document.getElementById('st-students').textContent=Object.keys(resultDB).length;
+    }catch(err){alert('Error: '+err.message);}
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function addManualResult(){
+  const cls=document.getElementById('adm-cls').value;
+  const exam=document.getElementById('adm-exam').value;
+  const roll=document.getElementById('mr-roll').value.trim();
+  const name=document.getElementById('mr-name').value.trim();
+  if(!cls||!roll||!name){alert('Class, Roll No aur Name zaroori hai');return;}
+  const subs=CLASS_SUBJECTS[cls]||[];
+  resultDB[cls+'_'+roll]={name,class:cls,exam,roll,
+    subjects:subs.map(s=>({sub:s.sub,marks:parseInt(document.getElementById('mr-'+s.sub.replace(/ /g,'_'))?.value||0),max:s.max}))};
+  const rs=document.getElementById('result-saved');
+  rs.style.display='block';
+  rs.textContent='✅ '+name+' (Roll '+roll+') — '+exam+' published! Students ab dekh sakte hain.';
+  document.getElementById('mr-roll').value='';
+  document.getElementById('mr-name').value='';
+  subs.forEach(s=>{const el=document.getElementById('mr-'+s.sub.replace(/ /g,'_'));if(el)el.value='';});
+  document.getElementById('st-students').textContent=Object.keys(resultDB).length;
+}
+
+function showRes(){
+  const cls=document.getElementById('rc').value;
+  const roll=document.getElementById('rn').value.trim();
+  const exam=document.getElementById('re').value;
+  if(!cls||!roll){alert('Class aur Roll Number daalein');return;}
+  let data=resultDB[cls+'_'+roll];
+  if(!data){
+    const subs=CLASS_SUBJECTS[cls]; if(!subs){alert('Result nahi mila');return;}
+    const names={1:'Arjun Meena',2:'Priya Sharma',3:'Suresh Kumar',4:'Kavita Bishnoi',5:'Rahul Joshi',6:'Sunita',7:'Deepak',8:'Anita',9:'Vikram',10:'Pooja',11:'Manoj',12:'Ramesh'};
+    const bm=[82,74,91,78,69,85,55,60,70,45,88,92];
+    const off=(parseInt(roll)-1)%12;
+    data={name:names[parseInt(roll)]||'Student Roll '+roll,class:cls,exam,roll,
+      subjects:subs.map((s,i)=>({sub:s.sub,marks:Math.min(s.max,Math.round((bm[(i+off)%12]/100)*s.max)),max:s.max}))};
+  }
+  document.getElementById('rname').textContent=data.name;
+  document.getElementById('rmeta').textContent=data.class+' | Roll No. '+data.roll+' | '+data.exam;
+  let total=0,maxT=0;
+  document.getElementById('rtbody').innerHTML=data.subjects.map(s=>{
+    total+=s.marks;maxT+=s.max;
+    const {g,c}=getGrade(s.marks,s.max);
+    return `<tr><td>${s.sub}</td><td>${s.max}</td><td><b>${s.marks}</b></td><td><span class="gr ${c}">${g}</span></td></tr>`;
+  }).join('');
+  const pct=(total/maxT*100).toFixed(1);
+  const {g:fg}=getGrade(total,maxT);
+  document.getElementById('rtotal').textContent=total+' / '+maxT;
+  document.getElementById('rpct').textContent=pct+'% — Grade '+fg;
+  const pass=parseFloat(pct)>=33;
+  const st=document.getElementById('rstatus');
+  st.textContent=pass?'✓ PASS':'✗ FAIL';
+  st.style.background=pass?'#e8f5e9':'#ffebee';
+  st.style.color=pass?'#2e7d32':'#c62828';
+  document.getElementById('rdisplay').classList.add('show');
+}
+
+function addNote(){
+  const ns=document.getElementById('note-saved');
+  ns.style.display='block';
+  setTimeout(()=>ns.style.display='none',3000);
+}
+
+function sendAdminNotif(){
+  const t=document.getElementById('adm-ntit').value.trim();
+  const m=document.getElementById('adm-nmsg').value.trim();
+  if(!t||!m){alert('Title aur message daalein');return;}
+  const nlist=document.getElementById('notif-display');
+  const ni=document.createElement('div');
+  ni.className='nit';
+  ni.innerHTML=`<div class="nd2 u"></div><div><div class="ntit2">${t}</div><div class="nbdy">${m}</div><div class="ntm">Just now</div></div>`;
+  nlist.insertBefore(ni,nlist.firstChild);
+  const pl=document.getElementById('notif-posted-list');
+  const pi=document.createElement('div');
+  pi.className='posted-item';
+  pi.innerHTML=`<div><div class="pi-info">${t}</div><div class="pi-meta">Just now</div></div><button class="del-btn" onclick="this.closest('.posted-item').remove()">🗑</button>`;
+  pl.insertBefore(pi,pl.firstChild);
+  document.getElementById('notif-sent').style.display='block';
+  document.getElementById('adm-ntit').value='';
+  document.getElementById('adm-nmsg').value='';
+  setTimeout(()=>document.getElementById('notif-sent').style.display='none',3000);
+}
+
+function quickSend(){
+  const t=document.getElementById('qsti').value.trim();
+  const b=document.getElementById('qsbi').value.trim();
+  if(!t||!b){alert('Title aur message daalein');return;}
+  const nlist=document.getElementById('notif-display');
+  const ni=document.createElement('div');
+  ni.className='nit';
+  ni.innerHTML=`<div class="nd2 u"></div><div><div class="ntit2">${t}</div><div class="nbdy">${b}</div><div class="ntm">Just now</div></div>`;
+  nlist.insertBefore(ni,nlist.firstChild);
+  alert('✅ Notification bhej di!');
+  document.getElementById('qsti').value='';
+  document.getElementById('qsbi').value='';
+  closeM('snm');
+}
+
+function showM(id){document.getElementById(id).classList.add('show')}
+function closeM(id){document.getElementById(id).classList.remove('show')}
+
+document.getElementById('paper-filter-row').addEventListener('click',function(e){
+  const chip=e.target.closest('.fc');
+  if(!chip) return;
+  this.querySelectorAll('.fc').forEach(x=>x.classList.remove('on'));
+  chip.classList.add('on');
+  renderPapersPublic(chip.dataset.filter||'all');
+});
+
+document.querySelectorAll('.fr').forEach(r=>{
+  if(r.id==='paper-filter-row') return;
+  r.querySelectorAll('.fc').forEach(c=>{
+    c.onclick=()=>{r.querySelectorAll('.fc').forEach(x=>x.classList.remove('on'));c.classList.add('on')};
+  });
+});
+
+renderStaffPublic();
+renderPapersPublic();
+</script>
